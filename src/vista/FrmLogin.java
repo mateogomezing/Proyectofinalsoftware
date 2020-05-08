@@ -16,7 +16,8 @@ import javax.swing.JPanel;
  */
 public class FrmLogin extends javax.swing.JFrame {
 
-    FondoPanel fondo=new FondoPanel();
+    FondoPanel fondo = new FondoPanel();
+
     public FrmLogin() {
         this.setContentPane(fondo);
         initComponents();
@@ -38,8 +39,9 @@ public class FrmLogin extends javax.swing.JFrame {
         CbxUsuario = new javax.swing.JComboBox<>();
         lblUsuario1 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnIngresar = new javax.swing.JButton();
+        btnRegistrarse = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -71,22 +73,36 @@ public class FrmLogin extends javax.swing.JFrame {
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setForeground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("INGRESAR");
+        btnIngresar.setBackground(new java.awt.Color(255, 255, 255));
+        btnIngresar.setForeground(new java.awt.Color(0, 0, 0));
+        btnIngresar.setText("INGRESAR");
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("REGISTRARSE");
+        btnRegistrarse.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegistrarse.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistrarse.setText("REGISTRARSE");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
+        btnSalir.setForeground(new java.awt.Color(0, 0, 0));
+        btnSalir.setText("SALIR");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblUsuario)
                             .addComponent(lblUsuario1))
@@ -95,11 +111,13 @@ public class FrmLogin extends javax.swing.JFrame {
                             .addComponent(CbxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton2)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegistrarse)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,8 +138,9 @@ public class FrmLogin extends javax.swing.JFrame {
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnIngresar)
+                    .addComponent(btnRegistrarse)
+                    .addComponent(btnSalir))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
@@ -138,6 +157,17 @@ public class FrmLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        FrmRegistroHuesped huesped = new FrmRegistroHuesped();
+        huesped.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,8 +206,9 @@ public class FrmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CbxUsuario;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnRegistrarse;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblUsuario;
