@@ -22,7 +22,7 @@ public class Huesped {
     private Date fechanacimiento;
     private String nacionalidad;
     private String contrasena;
-
+//
     public Huesped() {
 
     }
